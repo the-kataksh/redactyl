@@ -1,9 +1,12 @@
 from flask import Flask, request, jsonify
 from hidden_elements import detect_and_redact_hidden_elements
 from encoded_payloads import detect_encoded_payloads
+from flask_cors import CORS
 
 
 app = Flask(__name__)
+CORS(app)
+
 
 @app.route("/")
 def home():

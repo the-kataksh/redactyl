@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Redactyl",
+  "version": "0.1",
+  "description": "Analyze webpage HTML for hidden and encoded content",
+
+  "action": {
+    "default_popup": "popup.html"
+  },
+
+  "permissions": [
+    "activeTab",
+    "scripting"
+  ]
+}

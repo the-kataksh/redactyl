@@ -1,7 +1,15 @@
 from bs4 import BeautifulSoup
+from bs4.element import Tag
+
 
 def is_hidden(element):
-    style = element.get("style", "").replace(" ", "").lower()
+    if not isinstance(element, Tag):
+        return False
+
+    if element.attrs is None:
+        return False
+
+    style = element.attrs.get("style", "").replace(" ", "").lower()
 
     if "display:none" in style:
         return True
@@ -13,13 +21,8 @@ def is_hidden(element):
     return False
 
 
-def detect_and_redact_hidden_elements(html):
-    """Input: raw HTML string
-    Output:
-    - redacted_html (str)
-    - hidden_elements_removed (int)
-    """
 
+def detect_and_redact_hidden_elements(html):
     soup = BeautifulSoup(html, "html.parser")
     removed_count = 0
 
@@ -44,6 +47,5 @@ if __name__ == "__main__":
     """
 
     redacted_html, removed_count = detect_and_redact_hidden_elements(sample_html)
-
     print("Removed:", removed_count)
     print(redacted_html)
