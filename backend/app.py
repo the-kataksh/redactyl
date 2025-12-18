@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
-from hidden_elements import detect_and_redact_hidden_elements
-from encoded_payloads import detect_encoded_payloads
 from flask_cors import CORS
 
+from hidden_elements import detect_and_redact_hidden_elements
+from encoded_payloads import detect_encoded_payloads
+from risk_scoring import explain_risk
 
 app = Flask(__name__)
 CORS(app)
@@ -22,22 +23,28 @@ def analyze():
 
     raw_html = data["html"]
 
-    # Part 1: Hidden DOM redaction
+    #Always redact
     redacted_html, hidden_removed = detect_and_redact_hidden_elements(raw_html)
-
-    # Part 2: Encoded payload detection
     encoded_count, encoded_previews = detect_encoded_payloads(redacted_html)
 
+    risk_elements, explanation = explain_risk(
+        hidden_removed,
+        encoded_count
+    )
+
     response = {
-        "hidden_elements_removed": hidden_removed,
-        "encoded_payloads_detected": encoded_count,
-        "encoded_payload_previews": encoded_previews,
+        "redaction_summary": {
+            "hidden_elements_removed": hidden_removed,
+            "encoded_payloads_removed": encoded_count
+        },
+        "risk_elements_detected": risk_elements,
+        "explanation": explanation,
         "redacted_html": redacted_html
     }
 
     return jsonify(response), 200
 
 
-
 if __name__ == "__main__":
     app.run(debug=True)
+
