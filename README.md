@@ -55,45 +55,46 @@ PROJECT STRUCTURE
 -----------------
 
 • backend
-  - app.py
-    Flask API entry point
-  - hidden_elements.py
-    Hidden DOM detection and redaction
-  - encoded_payloads.py
-    Encoded payload detection
-  - risk_scoring.py
-    Risk explanation logic
+  - app.py - 
+    (Flask API entry point)
+  - hidden_elements.py -
+    (Hidden DOM detection and redaction)
+  - encoded_payloads.py -
+    (Encoded payload detection)
+  - risk_scoring.py -
+    (Risk explanation logic)
 
 • extension
-  - manifest.json
-    Chrome extension configuration
-  - popup.html
-    Extension UI
-  - popup.js
-    UI logic and backend communication
-  - popup.css
-    Dark mode styling
+  - manifest.json -
+    (Chrome extension configuration)
+  - popup.html -
+    (Extension UI)
+  - popup.js -
+    (UI logic and backend communication)
+  - popup.css -
+    (Dark mode styling)
   - assets
-    - logo.png
-      Redactyl logo
+    - logo.png -
+      (Redactyl logo)
 
 • dataset
-  - safe.html
-    No hidden or encoded content
-  - hidden_only.html
-    Hidden DOM elements only
-  - encoded_only.html
-    Encoded payloads only
-  - mixed_risk.html
-    Combination of risks
+  - safe.html -
+    (No hidden or encoded content)
+  - hidden_only.html -
+    (Hidden DOM elements only)
+  - encoded_only.html -
+    (Encoded payloads only)
+  - mixed_risk.html -
+    (Combination of risks)
 
 • docs
-  - architecture.md
-    Architecture explanation
-  - evaluation.md
-    Effectiveness evaluation
+  - architecture.md -
+    (Architecture explanation)
+  - evaluation.md -
+    (Effectiveness evaluation)
 
 • README.md
+
 • LICENSE
 
 
