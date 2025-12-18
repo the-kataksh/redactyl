@@ -2,10 +2,6 @@
   <img src="extension/assets/logo.png" alt="Redactyl Logo" width="180">
 </p>
 
-Redactyl
-
-AI-safe preprocessing layer for web content
-
 
 OVERVIEW
 --------
