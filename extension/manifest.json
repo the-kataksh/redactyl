@@ -1,15 +1,13 @@
 {
   "manifest_version": 3,
   "name": "Redactyl",
-  "version": "0.1",
-  "description": "Analyze webpage HTML for hidden and encoded content",
-
+  "version": "1.0",
+  "description": "AI-safe preprocessing layer for web content",
+  "permissions": ["scripting", "activeTab"],
   "action": {
     "default_popup": "popup.html"
   },
-
-  "permissions": [
-    "activeTab",
-    "scripting"
-  ]
+  "icons": {
+    "128": "assets/logo.png"
+  }
 }

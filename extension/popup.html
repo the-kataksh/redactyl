@@ -3,13 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <title>Redactyl</title>
+  <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-  <h3>Redactyl</h3>
+  <div class="container">
 
-  <button id="analyzeBtn">Analyze Page</button>
+    <div class="header">
+      <img src="assets/logo.png" class="logo" />
+      <div>
+        <h1>Redactyl</h1>
+        <p>AI-safe preprocessing layer for web content</p>
+      </div>
+    </div>
 
-  <p id="status">Idle</p>
+    <button id="analyzeBtn">Analyze Page</button>
+
+    <div id="status" class="status">
+      Ready
+    </div>
+
+    <div class="actions hidden" id="actions">
+      <button id="openHtml">Open Redacted HTML</button>
+      <button id="copyHtml">Copy Redacted HTML</button>
+    </div>
+
+  </div>
 
   <script src="popup.js"></script>
 </body>

@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #0b1220;
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  width: 360px;
+}
+
+.container {
+  padding: 16px;
+  border-radius: 12px;
+  background: linear-gradient(180deg, #0b1220, #020617);
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.08);
+}
+
+.header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+}
+
+h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+p {
+  font-size: 12px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#analyzeBtn {
+  background: #2563eb;
+  color: white;
+  margin-bottom: 12px;
+}
+
+#analyzeBtn:hover {
+  background: #1e40af;
+}
+
+.status {
+  font-size: 13px;
+  background: rgba(255,255,255,0.06);
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 40px;
+}
+
+.actions {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.actions button {
+  background: #1f2937;
+  color: white;
+}
+
+.actions button:hover {
+  background: #374151;
+}
+
+.hidden {
+  display: none;
+}
