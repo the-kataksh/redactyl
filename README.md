@@ -3,6 +3,7 @@
 </p>
 
 Redactyl
+
 AI-safe preprocessing layer for web content
 
 
@@ -56,34 +57,52 @@ FEATURES
 
 PROJECT STRUCTURE
 -----------------
-redactyl/
-│
-├── backend/
-│   ├── app.py                  Flask API entry point
-│   ├── hidden_elements.py      Hidden DOM detection and redaction
-│   ├── encoded_payloads.py     Encoded payload detection
-│   └── risk_scoring.py         Risk explanation logic
-│
-├── extension/
-│   ├── manifest.json           Chrome extension configuration
-│   ├── popup.html              Extension UI
-│   ├── popup.js                UI logic and backend communication
-│   ├── popup.css               UI styling
-│   └── assets/
-│       └── logo.png            Redactyl logo
-│
-├── dataset/
-│   ├── safe.html               No hidden or encoded content
-│   ├── hidden_only.html        Hidden DOM elements only
-│   ├── encoded_only.html       Encoded payloads only
-│   └── mixed_risk.html         Combination of risks
-│
-├── docs/
-│   ├── architecture.md         Detailed architecture notes
-│   └── evaluation.md           Effectiveness evaluation
-│
-├── README.md
-└── LICENSE
+
+1. Backend (Flask API)
+   - app.py
+     Entry point for the Flask backend and API routes
+   - hidden_elements.py
+     Detection and redaction of hidden DOM elements
+   - encoded_payloads.py
+     Detection of encoded payloads (Base64-like strings)
+   - risk_scoring.py
+     Risk explanation logic based on detected patterns
+
+2. Chrome Extension
+   - manifest.json
+     Chrome extension configuration
+   - popup.html
+     Extension user interface
+   - popup.js
+     UI logic and backend communication
+   - popup.css
+     UI styling (dark theme)
+   - assets/
+     - logo.png
+       Redactyl logo
+
+3. Dataset (Controlled Test HTML)
+   - safe.html
+     No hidden or encoded content
+   - hidden_only.html
+     Hidden DOM elements only
+   - encoded_only.html
+     Encoded payloads only
+   - mixed_risk.html
+     Combination of hidden and encoded risks
+
+4. Documentation
+   - architecture.md
+     Detailed system architecture explanation
+   - evaluation.md
+     Effectiveness evaluation using test datasets
+
+5. Root Files
+   - README.md
+     Project overview and usage
+   - LICENSE
+     MIT License
+
 
 
 EVALUATION
